@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:background="@drawable/weather_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeatherActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintWindow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="50dip"
+        android:layout_marginTop="50dip">
+
+        <TextView
+            android:id="@+id/textViewLocation"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.5"
+            android:background="@android:color/black"
+            android:gravity="center"
+            android:text="Location: \n N/A"
+
+            android:textAppearance="@android:style/TextAppearance.Material.Large.Inverse"
+            app:layout_constraintBottom_toTopOf="@+id/textViewPressure"
+            app:layout_constraintEnd_toStartOf="@+id/textViewTemperature"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintHorizontal_weight="25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="25" />
+
+        <TextView
+            android:id="@+id/textViewTemperature"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.5"
+            android:background="@android:color/black"
+            android:gravity="center"
+            android:text="Temperature: \n N/A"
+
+            android:textAppearance="@android:style/TextAppearance.Material.Large.Inverse"
+            app:layout_constraintBottom_toTopOf="@+id/textViewWind"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="25"
+            app:layout_constraintStart_toEndOf="@+id/textViewLocation"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="25" />
+
+        <TextView
+            android:id="@+id/textViewPressure"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.5"
+            android:background="@android:color/black"
+            android:gravity="center"
+            android:text="Air pressure: \n N/A"
+
+            android:textAppearance="@android:style/TextAppearance.Material.Large.Inverse"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textViewWind"
+            app:layout_constraintHorizontal_weight="25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLocation"
+            app:layout_constraintVertical_weight="25" />
+
+        <TextView
+            android:id="@+id/textViewWind"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.5"
+            android:background="@android:color/black"
+            android:gravity="center"
+            android:text="Wind speed: \n N/A"
+
+            android:textAppearance="@android:style/TextAppearance.Material.Large.Inverse"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="25"
+            app:layout_constraintStart_toEndOf="@+id/textViewPressure"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTemperature"
+            app:layout_constraintVertical_weight="25" />
+    </android.support.constraint.ConstraintLayout>
+
+    <!-- android:layout_alignParentStart="true" -->
+    <Button
+        android:id="@+id/buttonRequest"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_below="@+id/constraintWindow"
+        android:layout_marginTop="-50dip"
+        android:alpha="0.7"
+        android:background="@android:color/black"
+        android:text="Request data"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+
+    <Spinner
+        android:id="@+id/spinnerCities"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_above="@+id/constraintWindow"
+        android:layout_marginBottom="-50dip"
+        android:alpha="0.7"
+        android:background="@android:color/black" />
+</RelativeLayout>
